@@ -12,7 +12,7 @@ from menu import Menu
 #     print(p)
 
 def run():
-    show_menu = Menu().show_menu()
+    show_menu = Menu().select_option()
 
     print(show_menu)
 
