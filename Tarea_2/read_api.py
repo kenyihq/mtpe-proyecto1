@@ -1,13 +1,12 @@
 import requests
 
+class Pokeapi:
 
-def get_pokemon():
-    url = 'https://pokeapi.co/api/v2/pokemon'
-    res = requests.get(url)
+    def get_pokemon(self):
+        url = 'https://pokeapi.co/api/v2/pokemon'
+        res = requests.get(url)
 
-    res = res.json()
+        res = res.json()
 
-    for i in res['results']:
-        print(i)
-
-get_pokemon()
+        for i in res['results']:
+            print(i["name"])

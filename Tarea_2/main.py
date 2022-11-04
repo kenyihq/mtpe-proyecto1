@@ -1,7 +1,9 @@
-
+from read_api import Pokeapi
 
 def run():
-    pass
+    list_pokemon = Pokeapi()
+
+    list_pokemon.get_pokemon()
 
 
 if __name__ == '__main__':
