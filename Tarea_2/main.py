@@ -1,9 +1,20 @@
 from read_api import Pokeapi
+from menu import Menu
+
+# def run():
+#     list_pokemon = Pokeapi()
+
+#     p = list_pokemon.get_pokemon()
+
+#     for i in p:
+#         print(i)
+
+#     print(p)
 
 def run():
-    list_pokemon = Pokeapi()
+    show_menu = Menu().show_menu()
 
-    list_pokemon.get_pokemon()
+    print(show_menu)
 
 
 if __name__ == '__main__':

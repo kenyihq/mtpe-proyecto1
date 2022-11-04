@@ -9,4 +9,4 @@ class Pokeapi:
         res = res.json()
 
         for i in res['results']:
-            print(i["name"])
+            yield i["name"]
