@@ -14,7 +14,7 @@ from menu import Menu
 def run():
     show_menu = Menu().select_option()
 
-    print(show_menu)
+    show_menu
 
 
 if __name__ == '__main__':

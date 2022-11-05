@@ -1,16 +1,16 @@
-
-
+from pokemon import Pokemon
 
 class Menu:
 
     def show_menu(self):
-        menu = "\t P  O  K  E  A  P  I \n"
-        menu += "*"*40 + "\n"
+        menu = "\n\t P  O  K  E  A  P  I \n"
+        menu += "\n" + "*"*40 + "\n"
         menu += "\nOpción 1: Listar pokemons por generación\n"
         menu += "Opción 2: Listar pokemons por forma\n"
         menu += "Opción 3: Listar pokemons por habilidad\n"
         menu += "Opción 4: Listar pokemons por habitat\n"
         menu += "Opción 5: Listar pokemons por tipo\n"
+        menu += "Opción 6: Salir\n"
         menu += "\n" + "*"*40
 
         return menu
@@ -34,13 +34,38 @@ class Menu:
         elif option == '5':
             self.option_5()
 
+        elif option == '6':
+            quit
+
         else:
-            print("Elija una opción válida")
-            
-        return True
+            print("\n" + "*"*40 + "\n")
+            print("\tElija una opción válida")
+            print("\n" + "*"*40 + "\n")
+            self.select_option()
+        
+        return
 
     def option_1(self):
-        print("Elegiste opcion 1")
+        option = input('Ingrese la generación: ')
+
+        if option == '1':
+            Pokemon().generation_1()
+        elif option == '2':
+            Pokemon().generation_2()
+        elif option == '3':
+            Pokemon().generation_3()
+        elif option == '4':
+            Pokemon().generation_4()
+        elif option == '5':
+            Pokemon().generation_5()
+        elif option == '6':
+            Pokemon().generation_6()
+        elif option == '7':
+            Pokemon().generation_7()
+        elif option == '8':
+            Pokemon().generation_8()
+        elif option == '9':
+            Pokemon().generation_9()
 
 
     def option_2(self):
