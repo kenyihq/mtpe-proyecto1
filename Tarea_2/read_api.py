@@ -10,3 +10,4 @@ class Pokeapi:
 
         for i in res['results']:
             yield i["name"]
+

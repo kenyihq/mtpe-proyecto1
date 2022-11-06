@@ -140,4 +140,3 @@ class Pokemon:
 
         print("Elegiste la generación 8")
         print(poke_generation_8)
-
