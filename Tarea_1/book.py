@@ -1,7 +1,5 @@
-
-
 class Book:
-    def __init__(self, id_book, title, genre, isbn, editorial, autor):
+    def __init__(self, id_book = None, title = None, genre = None, isbn = None, editorial = None, autor = None):
         self.id_book = id_book
         self.title = title
         self.genre = genre
@@ -22,13 +20,19 @@ class Book:
 
 
     def add_book(self):
-        idlibro = input('id:')
-        titulo = input('titulo:')
-        genero = input('genero:')
-        isbn = input('isbn:')
-        editorial = input('editorial:')
-        autor = input('autor :')
-        #x=Libro(idlibro,titulo,genero,isbn,editorial,autor)
+        print("Ingrese los siguientes datos: \n")
+        idlibro = input('ID: ')
+        titulo = input('Título: ')
+        genero = input('Género: ')
+        isbn = input('ISBN: ')
+        editorial = input('Editorial: ')
+        autor = input('Autor: ')
+
+        new_book = [idlibro, titulo, genero, isbn, editorial, autor]
+
+        print(new_book)
+
+        return new_book
 
 
 

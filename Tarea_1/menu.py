@@ -1,4 +1,5 @@
 from read_books import read_books
+from read_books import new_book
 from book import Book
 
 class Menu:
@@ -27,8 +28,8 @@ class Menu:
             print(libro.show_books())
 
     def add_book(self):
-        pass
-
+        #Book().add_book()
+        new_book('./text.csv')
 
 
 
@@ -41,7 +42,8 @@ class Menu:
             self.list_books()
 
         elif option == '2':
-            self.option_2()
+            self.add_book()
+
 
         elif option == '3':
             self.option_3()
