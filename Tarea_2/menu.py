@@ -64,12 +64,10 @@ class Menu:
             Pokemon().generation_7()
         elif option == '8':
             Pokemon().generation_8()
-        elif option == '9':
-            Pokemon().generation_9()
-
 
     def option_2(self):
         print("Elegiste opcion 2")
+        Pokemon().poke_forma()
 
 
     def option_3(self):

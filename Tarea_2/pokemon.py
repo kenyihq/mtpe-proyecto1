@@ -141,3 +141,17 @@ class Pokemon:
         print("Elegiste la generación 8")
         print(poke_generation_8)
 
+
+    def poke_forma(self):
+        url_form = 'https://pokeapi.co/api/v2/pokemon-shape/'
+        resp = requests.get(url_form)
+        data = resp.json()
+        print('Escribir uno de los siguientes formas:')
+        for x in data["results"]:
+            print(x["name"])
+        form_selected = input('forma: ')
+        url_form += form_selected
+        resp = requests.get(url_form)
+        data = resp.json()
+        for x in data["pokemon_species"]:
+            print(x["name"])
