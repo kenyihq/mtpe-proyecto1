@@ -1,5 +1,6 @@
 import requests
 
+
 class Pokeapi:
 
     def get_pokemon(self):

@@ -1,17 +1,18 @@
 import requests
 
+
 class Pokemon:
 
     def generation_1(self):
         url_generation_1 = "https://pokeapi.co/api/v2/generation/1"
-        
+
         pokemon_data = {
             "pokemon_species": ""
         }
 
         response = requests.get(url_generation_1)
         data = response.json()
-        
+
         pokemon_data["pokemon_species"] = data["pokemon_species"]
 
         poke_generation_1 = [pokemon["name"] for pokemon in data["pokemon_species"]]
@@ -20,14 +21,14 @@ class Pokemon:
 
     def generation_2(self):
         url_generation_2 = "https://pokeapi.co/api/v2/generation/2"
-        
+
         pokemon_data = {
             "pokemon_species": ""
         }
 
         response = requests.get(url_generation_2)
         data = response.json()
-        
+
         pokemon_data["pokemon_species"] = data["pokemon_species"]
 
         poke_generation_2 = [pokemon["name"] for pokemon in data["pokemon_species"]]
@@ -37,14 +38,14 @@ class Pokemon:
 
     def generation_3(self):
         url_generation_3 = "https://pokeapi.co/api/v2/generation/3"
-        
+
         pokemon_data = {
             "pokemon_species": ""
         }
 
         response = requests.get(url_generation_3)
         data = response.json()
-        
+
         pokemon_data["pokemon_species"] = data["pokemon_species"]
 
         poke_generation_3 = [pokemon["name"] for pokemon in data["pokemon_species"]]
@@ -54,14 +55,14 @@ class Pokemon:
 
     def generation_4(self):
         url_generation_4 = "https://pokeapi.co/api/v2/generation/4"
-        
+
         pokemon_data = {
             "pokemon_species": ""
         }
 
         response = requests.get(url_generation_4)
         data = response.json()
-        
+
         pokemon_data["pokemon_species"] = data["pokemon_species"]
 
         poke_generation_4 = [pokemon["name"] for pokemon in data["pokemon_species"]]
@@ -72,14 +73,14 @@ class Pokemon:
     def generation_5(self):
 
         url_generation_5 = "https://pokeapi.co/api/v2/generation/5"
-        
+
         pokemon_data = {
             "pokemon_species": ""
         }
 
         response = requests.get(url_generation_5)
         data = response.json()
-        
+
         pokemon_data["pokemon_species"] = data["pokemon_species"]
 
         poke_generation_5 = [pokemon["name"] for pokemon in data["pokemon_species"]]
@@ -90,14 +91,14 @@ class Pokemon:
     def generation_6(self):
 
         url_generation_6 = "https://pokeapi.co/api/v2/generation/6"
-        
+
         pokemon_data = {
             "pokemon_species": ""
         }
 
         response = requests.get(url_generation_6)
         data = response.json()
-        
+
         pokemon_data["pokemon_species"] = data["pokemon_species"]
 
         poke_generation_6 = [pokemon["name"] for pokemon in data["pokemon_species"]]
@@ -108,14 +109,14 @@ class Pokemon:
     def generation_7(self):
 
         url_generation_7 = "https://pokeapi.co/api/v2/generation/7"
-        
+
         pokemon_data = {
             "pokemon_species": ""
         }
 
         response = requests.get(url_generation_7)
         data = response.json()
-        
+
         pokemon_data["pokemon_species"] = data["pokemon_species"]
 
         poke_generation_7 = [pokemon["name"] for pokemon in data["pokemon_species"]]
@@ -126,21 +127,20 @@ class Pokemon:
     def generation_8(self):
 
         url_generation_8 = "https://pokeapi.co/api/v2/generation/8"
-        
+
         pokemon_data = {
             "pokemon_species": ""
         }
 
         response = requests.get(url_generation_8)
         data = response.json()
-        
+
         pokemon_data["pokemon_species"] = data["pokemon_species"]
 
         poke_generation_8 = [pokemon["name"] for pokemon in data["pokemon_species"]]
 
         print("Elegiste la generación 8")
         print(poke_generation_8)
-
 
     def poke_forma(self):
         url_form = 'https://pokeapi.co/api/v2/pokemon-shape/'
@@ -155,3 +155,47 @@ class Pokemon:
         data = resp.json()
         for x in data["pokemon_species"]:
             print(x["name"])
+
+    def ability(self):
+        url_ability = 'https://pokeapi.co/api/v2/ability/'
+        resp = requests.get(url_ability)
+        data = resp.json()
+        print('Escribir una de la siguientes habilidades:')
+        for x in data['results']:
+            print(x['name'])
+        ability_selected = input('habilidad: ')
+        url_ability += ability_selected
+        resp = requests.get(url_ability)
+        data = resp.json()
+        for x in data['pokemon']:
+            print(x['pokemon']['name'])
+
+    def habit(self):
+        url_habit = 'https://pokeapi.co/api/v2/pokemon-habitat/'
+        resp = requests.get(url_habit)
+        data = resp.json()
+        print('Escribir uno de los siguientes habitats:')
+        for x in data['results']:
+            print(x['name'])
+        habit_selected = input('Habitat: ')
+        url_habit += habit_selected
+        resp = requests.get(url_habit)
+        data = resp.json()
+        for x in data['pokemon_species']:
+            print(x['name'])
+
+    # RDEvuelve los tipos
+
+    def types(self):
+        url_type_rock = 'https://pokeapi.co/api/v2/type/'
+        resp = requests.get(url_type_rock)
+        data = resp.json()
+        print('Escribir uno de los siguientes tipos:')
+        for x in data['results']:
+            print(x['name'])
+        tipe_selected = input('Tipo: ')
+        url_type_rock += tipe_selected
+        resp = requests.get(url_type_rock)
+        data = resp.json()
+        for x in data['pokemon']:
+            print(x['pokemon']['name'])
