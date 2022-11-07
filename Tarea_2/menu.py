@@ -70,6 +70,7 @@ class Menu:
 
     def option_2(self):
         print("Elegiste opcion 2")
+        Pokemon().poke_forma()
 
 
     def option_3(self):

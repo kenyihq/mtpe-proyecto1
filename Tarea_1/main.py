@@ -1,11 +1,11 @@
 from menu import Menu
-
+from read_books import *
 menu = Menu()
     
 
 def run():
-    
-    menu.select_option()
+    books = menu.list_books()
+    menu.select_option(books)
 
 
 if __name__ == '__main__':
