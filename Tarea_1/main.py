@@ -48,7 +48,7 @@ class Libro:
 def searchisbntitle(datos: list):
     print('Escriba el numero opcion que requiera')
     print('Opcion 1 : Buscar por ISBN')
-    print('Opcion 2 : BUscar por Titulo')
+    print('Opcion 2 : Buscar por Titulo')
     option = 0
     while (option != 1) and (option != 2):
         option = int(input("Seleccione una opcion: "))
@@ -73,28 +73,67 @@ def searchisbntitle(datos: list):
 
 
 def ordertitle(datos: list):
-    new = []
-    back = datos
-    tit_minimo = 'zzzzz'
-    lib_minimo = None
-    # Calculamos el minimo
-    for y in range(len(datos)):
-        for x in back:
-            if x.titulo < tit_minimo:
-                lib_minimo = x
-                tit_minimo = x.titulo
-        new.append(lib_minimo)
-        back.remove(lib_minimo)
-        print(new[0].titulo)
-        print(back[0].titulo)
-
-    # Ordenamos a partir del minimo
-    # for x in back:
+    change = True
+    while change:
+        change = False
+        for i in range(len(datos) - 1):
+            if datos[i].titulo > datos[i + 1].titulo:
+                datos[i], datos[i + 1] = datos[i + 1], datos[i]
+                change = True
+    for x in datos:
+        print(x.titulo)
 
 
-# libro1 = Libro(1, 'The book', 'Accion', 'ISBN', 'El comercio', 'Anonimo')
+def search_author_editorial_genre(datos: list):
+    print('Escriba el numero opcion que requiera')
+    print('Opcion 1 : Buscar por autor')
+    print('Opcion 2 : Buscar por editorial')
+    print('Opcion 3 : Buscar por genero')
+    option = 0
+    while (option != 1) and (option != 2) and (option != 3):
+        option = int(input("Seleccione una opcion: "))
+        if option == 1:
+            author = input('Escribir author : ')
+            flag = True
+            for n in datos:
+                if n.autor == author:
+                    n.listar()
+                    flag = False
+            if flag:
+                print('No existe un valor con el autor solicitado')
+        if option == 2:
+            editorial = input('Escribir editorial : ')
+            flag = True
+            for n in datos:
+                if n.editorial == editorial:
+                    n.listar()
+                    flag = False
+            if flag:
+                print('No existe un valor con el editorial solicitado')
+        if option == 3:
+            genero = input('Escribir genero : ')
+            flag = True
+            for n in datos:
+                if n.genero == genero:
+                    n.listar()
+                    flag = False
+            if flag:
+                print('No existe un valor con el genero solicitado')
+
+
+def numberauthor(datos: list):
+    number_author = int(input('Cantiddad de autores : '))
+    for book in datos:
+        if len(book.autor.split('.')) == number_author:
+            print(book.listar())
+
+        # libro1 = Libro(1, 'The book', 'Accion', 'ISBN', 'El comercio', 'Anonimo')
+
+
 # readbook(datos)
 readbooks(biblio)
 # listar(biblio)
 # searchisbntitle(biblio)
-ordertitle(biblio)
+# ordertitle(biblio)
+# search_author_editorial_genre(biblio)
+numberauthor(biblio)
