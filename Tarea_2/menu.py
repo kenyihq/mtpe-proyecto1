@@ -74,11 +74,12 @@ class Menu:
 
     def option_3(self):
         print("Elegiste opcion 3")
-
+        Pokemon().ability()
 
     def option_4(self):
         print("Elegiste opcion 4")
-
+        Pokemon().habit()
 
     def option_5(self):
         print("Elegiste opcion 5")
+        Pokemon().types()
