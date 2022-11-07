@@ -27,26 +27,41 @@ class Menu:
 
             print(libro.show_books())
 
-    def add_book(self):
-        #Book().add_book()
+    def add_book(self):        
         new_book('./text.csv')
 
 
+    def delete_book(self):
+        delete_book = Book().delete_book()
+        delete_book = int(delete_book)
+
+        books = read_books('./text.csv')
+
+        # for i in range(len(books)):
+        #     for j in range(len(books)):
+                
+        #         if str(books[i][j]) == str(delete_book):
+
+        #             mes = books[delete_book - 1]
+
+        for i in books:
+            if int(i[0]) == delete_book:
+                mes = f"ID del libro es: {i[0]}"
+
+        print(mes)
 
     def select_option(self):
         print(self.show_menu())
         option = input("Ingrese una opcion válida: ")
 
         if option == '1':
-
             self.list_books()
 
         elif option == '2':
             self.add_book()
 
-
         elif option == '3':
-            self.option_3()
+            self.delete_book()
 
         elif option == '4':
             self.option_4()

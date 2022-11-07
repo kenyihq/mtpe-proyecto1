@@ -30,10 +30,23 @@ class Book:
 
         new_book = [idlibro, titulo, genero, isbn, editorial, autor]
 
-        print(new_book)
-
         return new_book
 
+    def delete_book(self):
+        search_book = input("Ingrese el ID del libro que desea eliminar: ")
+
+        return search_book
+
+        # books = read_books('./text.csv')
+
+        # for i in books:
+        #     #libro = Book(i[0], i[1], i[2], i[3], i[4], i[5])
+
+        #     if Book(i[0]) == i:
+
+        #         mes = Book(i[0], i[1], i[2], i[3], i[4], i[5])
+        #         mes += "\nEliminado correcttamente"
 
 
+        # return mes
 
